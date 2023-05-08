@@ -1,4 +1,4 @@
-#ReactJS Basics
+# ReactJS Basics
 1. Implementing CSS in React
 There are many ways to import css, styling in React one common way is to 
 ```
