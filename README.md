@@ -1,5 +1,6 @@
 # ReactJS Basics
-1. Implementing CSS in React
+
+*** 1. Implementing CSS in React ***
 There are many ways to import css, styling in React one common way is to 
 ```
 import './App.css'
@@ -18,26 +19,26 @@ return (
 )
 ```
 
-2. Ternary Operators
+*** 2. Ternary Operators ***
 
 ```
 age >= 18 ? console.log("Over Age") : console("Under Age");
 {isGreen && <h1>It's Green</h1> : <h1>It's not Green</h1>}
 ```
 
-3. Conditional Rendering in React
+*** 3. Conditional Rendering in React ***
 We can use Ternary Operators in Javascript to do Conditional Rendering in React
 
 ```
 <h1 style={{color: isGreen ? "green" : "red"}}>Text Color</h1>
 ```
 
-4. Working with Lists
+*** 4. Working with Lists ***
 Why???
 
-: To avoid getting a warning is React, we need to put a key prop inside any looped child. 
+✅ : To avoid getting a warning is React, we need to put a key prop inside any looped child. 
 Warning: Each child in a list should have a unique “key” prop.
-: React can keep track of each of component even if their position or data changes.
+✅ : React can keep track of each of component even if their position or data changes.
 
 !!JSX elements directly inside a map() call always need keys!
 !!It is so your component remembers data unit with an unique name in its lifecycle.
