@@ -1,14 +1,27 @@
-import './App.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function App() {
-  const [string, setString] = useState('');
 
-  const handleChange = (e) => {
-    let value = e.target.value;
-    setString(value);
-  }
+const App = () => {
+  const [resourceType, setResourceType] = useState('posts');
+  const [items, setItems] = useState([]);
 
-  return <div><input type="text" onChange={handleChange} />{string}</div>;
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then(response => response.json())
+      .then(json => setItems(json))
+  }, [resourceType])
+  return (
+    <div>
+      <button onClick={() => setResourceType('posts')}>Posts</button>
+      <button onClick={() => setResourceType('users')}>Users</button>
+      <button onClick={() => setResourceType('comments')}>Comments</button>
+
+      <h1>{resourceType}</h1>
+      {items.map((item, key) => {
+        return <pre >{ JSON.stringify(item)}</pre>
+      })}
+    </div>
+  )
 }
-export default App;
+
+export default App
