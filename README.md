@@ -1,6 +1,6 @@
 # ReactJS Basics
 
-** 1. Implementing CSS in React
+**1. Implementing CSS in React
 There are many ways to import css, styling in React one common way is to 
 ```
 import './App.css'
@@ -19,21 +19,21 @@ return (
 )
 ```
 
-** 2. Ternary Operators
+**2. Ternary Operators
 
 ```
 age >= 18 ? console.log("Over Age") : console("Under Age");
 {isGreen && <h1>It's Green</h1> : <h1>It's not Green</h1>}
 ```
 
-** 3. Conditional Rendering in React
+**3. Conditional Rendering in React
 We can use Ternary Operators in Javascript to do Conditional Rendering in React
 
 ```
 <h1 style={{color: isGreen ? "green" : "red"}}>Text Color</h1>
 ```
 
-** 4. Working with Lists
+**4. Working with Lists
 Why???
 
 ✅ : To avoid getting a warning is React, we need to put a key prop inside any looped child. 
@@ -47,7 +47,7 @@ Imagine that files on your desktop didn’t have names. Instead, you’d refer t
 
 File names in a folder and JSX keys in an array serve a similar purpose. They let us uniquely identify an item between its siblings. A well-chosen key provides more information than the position within the array. Even if the position changes due to reordering, the key lets React identify the item throughout its lifetime.
 
-** 5. State in React
+**5. State in React
 What is State? 
 : State is a built-in React object that is used to contain data or information about a component. Whenever the state of a component changes, component re-renders.
 
