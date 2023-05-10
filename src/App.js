@@ -1,27 +1,60 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState} from 'react';
+import './App.css'
+import Task from './Task';
 
 const App = () => {
-  const [resourceType, setResourceType] = useState('posts');
-  const [items, setItems] = useState([]);
+  const [todoList, setTodoList] = useState([]);
+  const [newTask, setNewTask] = useState('');
 
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-      .then(response => response.json())
-      .then(json => setItems(json))
-  }, [resourceType])
-  return (
-    <div>
-      <button onClick={() => setResourceType('posts')}>Posts</button>
-      <button onClick={() => setResourceType('users')}>Users</button>
-      <button onClick={() => setResourceType('comments')}>Comments</button>
+  const handleChange = (e) => {
+    setNewTask(e.target.value);
+  }
+  
+  const addTask = () => {
+    const task = {
+      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
+      taskName: newTask,
+      completed : false,
+    };
 
-      <h1>{resourceType}</h1>
-      {items.map((item, key) => {
-        return <pre >{ JSON.stringify(item)}</pre>
-      })}
+    setTodoList([...todoList, task]);
+  }
+
+  const deleteTask = (id) => {
+    const newTodoList = todoList.filter((item) => {
+      return item.id !== id;
+    });
+
+    setTodoList(newTodoList);
+  }
+
+  const completeTask = (id) => {
+    setTodoList(
+      todoList.map((t) => {
+        if (t.id === id) {
+          return { ...t, completed: true };
+        } else {
+          return t;
+          }
+        })
+      )
+  }
+
+  return ( 
+    <div className='App'>
+      <div className='addTask'>
+        <input onChange={handleChange} type="text" />
+        <button onClick={addTask}>Add Task</button>
+      </div>
+      <div className='list'>
+        <ul>
+          {todoList.map((item, key) => {
+            return <Task key={key} task={item.taskName} id={item.id} completed={item.completed} deleteTask={deleteTask} completeTask={completeTask} />
+          })}
+        </ul>
+      </div>
     </div>
   )
 }
 
-export default App
+export default App;
