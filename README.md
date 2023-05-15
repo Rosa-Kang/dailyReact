@@ -64,3 +64,7 @@ You can explain the difference between State and Props in 4 main factors.
 
 . useEffect
 useEffect Hook is a hook that is used to control what happens depending on which stage of the lifecycle it is. 
+**useEffect lets you synchronize a component with an external system.
+
+. what does <React.StrictMode> do?
+React.StrictMode highlights potential issues in a programme. It works encapsulating a portion of your full application as a component. **In Strict Mode, React double invokes render methods in order to flush out potential side effects.
