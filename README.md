@@ -57,3 +57,10 @@ You can explain the difference between State and Props in 4 main factors.
 2) Mutability : States are mutable whereas the Props are not. 
 3) Component : States are used in Class component, whereas Props can be used in both Functional/ Class components
 4) Updation : Event handlers can update states. Props are set by the parent component. 
+
+
+. React LifeCycle
+: mounting, updating, unmounting.
+
+. useEffect
+useEffect Hook is a hook that is used to control what happens depending on which stage of the lifecycle it is. 
