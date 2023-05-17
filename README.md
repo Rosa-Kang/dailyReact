@@ -73,3 +73,6 @@ React.StrictMode highlights potential issues in a programme. It works encapsulat
 
 . React Router DOM
 an external library 
+
+. State Management in React
+Prop Drilling ? : is the process of passing data from one component via several interconnected components to the component that needs it. 
