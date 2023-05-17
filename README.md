@@ -70,3 +70,5 @@ useEffect Hook is a hook that is used to control what happens depending on which
 React.StrictMode highlights potential issues in a programme. It works encapsulating a portion of your full application as a component. **In Strict Mode, React double invokes render methods in order to flush out potential side effects.
 
 . fetch Data from API
+
+. React Riouter DOM
