@@ -1,45 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Menu } from './pages/Menu';
+import { Contact } from './pages/Contact';
 
 const App = () => {
-  const [catFact, setCatFact] = useState('');
-  const [name, setName] = useState('');
-  const [age, setAge] = useState(0);
-  
-  const handleGenerate = () => {
-    axios.get(`https://catfact.ninja/fact`).then((res) => {
-      setCatFact(res.data.fact);
-    });
-  }
-
-  const handleChange = (e) => {
-    setName(e.target.value);
-  }
-
-  const fetchData = () => {
-    axios.get(`https://api.agify.io/?name=${name}`).then((res) => {
-      setAge(res.data?.age);
-    })
-  }
-
-  useEffect(() => {
-    handleGenerate();
-    fetchData();
-  }, [])
-
   return (
     <div className='App'>
-      <div>
-      <button onClick={handleGenerate}>Generate Cat Fact</button>
-      <p>{catFact}</p> 
-      </div>
-
-      
-      <input type="text" placeholder='Ex. Rosa..' onChange={handleChange} />
-      <button onClick={fetchData}>Show</button>
-      <h1>Predicted Age: { age }</h1>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/menu' element={<Menu/>} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<h1>PAGE NOT FOUND</h1>} />
+        </Routes>
+      </Router>
     </div>
   )
 }
