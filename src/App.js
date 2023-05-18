@@ -8,12 +8,15 @@ import {QueryClient, QueryClientProvider } from '@tanstack/react-query';
 export const AppContext = createContext();
 
 const App = () => {
-  const client = new QueryClient();
+  const client = new QueryClient({
+    defaultOptions: {
+      refetchOnWindowFocus: false,
+  }});
   const [username, setUsername] = useState('Rosa')
 
   return (
     <div className='App'>
-      <QueryClientProvide>
+      <QueryClientProvider client={client}>
       <AppContext.Provider value={{ username, setUsername }}>
         
       <Router>
@@ -25,7 +28,7 @@ const App = () => {
         </Routes>
       </Router>
       </AppContext.Provider>
-      </QueryClientProvide>
+      </QueryClientProvider>
     </div>
   )
 }
