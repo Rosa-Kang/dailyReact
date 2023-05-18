@@ -76,3 +76,12 @@ an external library
 
 . State Management in React
 Prop Drilling ? : is the process of passing data from one component via several interconnected components to the component that needs it. 
+
+. React Query
+: a powerful library for managing data in React
+React Query is a data-fetching library that helps with fetching, caching, synchronising, and updating the server state in your react application.
+
+. What is Axios?
+Axios is a popular HTTP client for making API requests in JavaScript applications. 
+
+*Combining React Query with Axios, we can create a robust data management solution that is easy to use and maintain.
