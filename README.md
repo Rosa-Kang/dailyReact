@@ -85,3 +85,6 @@ React Query is a data-fetching library that helps with fetching, caching, synchr
 Axios is a popular HTTP client for making API requests in JavaScript applications. 
 
 *Combining React Query with Axios, we can create a robust data management solution that is easy to use and maintain.
+
+. How to Form right in React
+: Using Library such as Yup, yupResolver, and useForm in react-hook-form.
